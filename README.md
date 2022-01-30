@@ -17,14 +17,6 @@ Run the container
 * `-p` to map 9001 host port to container 9000 port. PHP-FPM runs on port 9000 inside the container. If you need other FPMs to run, change `9001` with whatever free port.
 * `--name fpm1` so we can easily pick that container when running commands.
 
-### Debug
-
-Handy commands for debugging
-
-`sudo docker logs -f fpm1` to get the container logs.
-
-`sudo docker exec -it fpm1 /bin/bash` to get bash inside the container.
-
 ### Apache
 
 Enable some mods with `sudo a2enmod proxy proxy_fcgi` and `sudo systemctl restart apache2`
@@ -65,4 +57,14 @@ Add this line into your `/etc/hosts` file
 127.0.0.1    fpm1.local
 ```
 
-And then go to `http://fpm1.local/`
+### Done!
+
+Just go to `http://fpm1.local/` and *it should just work*.
+
+### Debug
+
+Handy commands for debugging
+
+`sudo docker logs -f fpm1` to get the container logs.
+
+`sudo docker exec -it fpm1 /bin/bash` to get bash inside the container.
