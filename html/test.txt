@@ -1,0 +1,2 @@
+hello
+use this file to check if you Apache vhost points to the right folder.
